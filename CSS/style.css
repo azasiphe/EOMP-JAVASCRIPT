@@ -1,0 +1,124 @@
+body{
+    font-family: 'arial',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    align-items: center;
+    background-image: url(https://i.postimg.cc/5tHfLFgT/images-29.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    justify-content: space-between;
+    background-repeat: no-repeat;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo img{
+    max-height: 50px;
+    
+}
+
+h1{margin: 0 0 0 4%;
+    color: red;}
+   
+header{
+    background-color: black;
+    color:black;
+    padding: 1em;
+}
+nav ul {list-style-type: none;
+margin: 30px; 
+color: black;
+background-color: red;
+text-align: center;
+padding: 20px;}
+
+nav ul li {
+    display:inline;
+    margin-right: 30px;
+    text-align: center;
+    color: black;
+    font-size: larger;
+    
+    text-decoration: none;
+}
+nav ul li a:hover{
+    background-color: blue;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+footer{
+    background-color: red;
+    color: black;
+    text-align: center;
+    padding:1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.hero {
+  
+    background-size: cover;
+    background-position: center;
+    color:white;
+    font-size: 25px;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+
+    animation:colorChange 4s infinite alternate;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+   
+}
+.btn:hover{background-color: blue;}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+}
+@keyframes colorChange{
+    0%{
+        color: black;
+        font-weight: bolder;
+    }
+    25%{
+        color: blue;
+        font-weight: bolder;
+    }
+    50%{
+        color: red;
+        font-weight: bolder;
+    }
+    75%{
+        color: fuchsia;
+        font-weight: bolder;
+    }
+    100%{
+        color: orangered;
+        font-weight: bolder;
+    }
+}

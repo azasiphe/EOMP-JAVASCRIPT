@@ -209,3 +209,60 @@ text-align: left;
     color: white;
 
 }
+#productDisplay{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    border: 10px solid black;
+    background-color: red;
+    margin: 20px;
+    padding: 10px;
+    align-items: center;
+    
+}
+.article td{
+    border: 2px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+}
+/* table{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr; */
+    
+ img  {
+  margin: 20px;
+  width: 170px;
+
+ }
+ button{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border-color:black ;
+
+ }
+ button:hover{
+    background-color: blue;
+ }
+  #searchBox{
+   
+  margin: 0 0 0 2%;
+ }
+ #sortSelect,  #productTable{
+    margin-top: 10px;
+ }
+ #sortBox{
+    margin: 0 0 0 80%;
+ }
+ #searchInput{
+    padding: 4px;
+    font-size: 20px;
+    border-radius: 70px;
+   
+ }
+ #sb{
+    padding: 6px;
+    border-radius:20px;
+ }
+

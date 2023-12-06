@@ -14,6 +14,13 @@
         padding: 20px;
        
     }
+    .search-bar{
+       padding: 10px;
+    }
+    .sort-btn{
+        cursor: pointer;
+       background-color: red;
+    }
     .product-card{
         border: 1px solid #ccc;
         padding: 20px;
@@ -56,107 +63,28 @@
 </ul>
 </nav>
     </header>
+    <main>
+        <div id="sortBox">
+            <label for="sortSelect">Sort by:</label>
+            <select id="sortSelect" onchange="sortItems()">
+            <option value="name">Name</option>
+            <option value="Price">Price</option>
 
-<section class="product">
-    <div class="product-card">
-        <img src="https://i.postimg.cc/BQW5qZgH/images-31.jpg" alt="prd1">
-        <h3>Mug</h3>
-        <p></p>
-        <p class="price">R50</p>
-        <button class="add-to cart btn">Add to Cart</button>
-        <button class="remove">Remove</button>
+            </select>
+        </div>
+        <div id="searchBox">
+            <input type="text" id="searchInput" placeholder="Search for items">
+       <button onclick="searchItems()" id="sb">Search</button>
+        </div>
     </div>
-    <div class="product-card">
-        <img src="https://i.postimg.cc/3RbSHzhy/download-32.jpg" alt="prd2">
-        <h3>T-shirt</h3>
-        <p></p>
-        <p class="price">R250</p>
-        <button class="add-to cart btn">Add to Cart</button>
-        <button class="remove">Remove</button>
-    </div>
-    <div class="product-card">
-        <img src="https://i.postimg.cc/MGJCkfP4/IMG-20220222-WA0025-250x250.jpg" alt="prd1">
-        <h3>Flask</h3>
-        <p></p>
-        <p class="price">R150</p>
-        <button class="add-to cart btn">Add to Cart</button>
-        <button class="remove">Remove</button>
-    </div>
-    <div class="product-card">
-        <img style="width: 200px;"  src="https://i.postimg.cc/T2Fr4f1L/IMG-20211119-WA0013-1024x1024-1-300x300.jpg" alt="prd1">
-        <h3>Sippy cups</h3>
-       
-        <p class="price">R120</p>
-        <button class="add-to cart btn">Add to Cart</button>
-        <button class="remove">Remove</button>
-    </div>
+        <div id="productDisplay" >
 
-    <div class="product-card">
-        <img src="https://i.postimg.cc/mrsQTRHd/Sling-Bag.jpg" alt="prd1">
-        <h3>Bag</h3>
-       
-        <p class="price">R208</p>
-        <button class="add-to cart btn">Add to Cart</button>
-        <button class="remove">Remove</button>
-    </div>
-    <div class="product-card">
-        <img style="width: 200px;" src="https://i.postimg.cc/y62ZPKYf/Scatters-Pillows-300x300.png" alt="prd1">
-        <h3>Pillow cases</h3>
-       
-        <p class="price">R300</p>
-        <button class="add-to cart btn">Add to Cart</button>
-        <button class="remove">Remove</button>
-    </div>
-    <div class="product-card">
-        <img style="width: 250px;" src="https://i.postimg.cc/P5dD94G9/Ma-beddegoed-2.png" alt="prd1">
-        <h3>Bedding</h3>
-        
-        <p class="price">R500 to R1500</p>
-        <button class="add-to cart btn">Add to Cart</button>
-        <button class="remove">Remove</button>
-    </div>
-    <div class="product-card">
-        <img style="width: 200px;" src="https://i.postimg.cc/kMtB572F/IMG-20220203-WA0001-440x440.jpg" alt="prd1">
-        <h3>Dribble nappy</h3>
-        
-        <p class="price">R160</p>
-        <button class="add-to cart btn">Add to Cart</button>
-        <button class="remove">Remove</button>
-    </div>
-    <div class="product-card">
-        <img style="width: 200px;" src="https://i.postimg.cc/K8jfKKBs/057f05ea432a951c66db507afb33a23e-300x300.jpg" alt="prd1">
-        <h3>Socks</h3>
-      
-        <p class="price">R100</p>
-        <button class="add-to cart btn">Add to Cart</button>
-        <button class="remove">Remove</button>
-    </div>
-    <div class="product-card">
-        <img src="https://i.postimg.cc/nrfSBHp9/Puzzle.jpg" alt="prd1">
-        <h3>Puzzle</h3>
-       
-        <p class="price">R300</p>
-        <button class="add-to cart btn">Add to Cart</button>
-        <button class="remove">Remove</button>
-    </div>
-    <div class="product-card">
-        <img style="width: 200px;" src="https://i.postimg.cc/RFWxXCkP/IMG-20211116-WA0037-440x440.jpg" alt="prd1">
-        <h3>Key holder</h3>
-        
-        <p class="price">R80</p>
-        <button class="add-to cart btn">Add to Cart</button>
-        <button class="remove">Remove</button>
-    </div>
-    <div class="product-card">
-        <img src="https://i.postimg.cc/XJbYPCg2/images-27.jpg" alt="prd1">
-        <h3>Car Magnets</h3>
-       
-        <p class="price">R240 to R700</p>
-        <button class="add-to cart btn">Add to Cart</button>
-        <button class="remove">Remove</button>
-    </div>
-</section>
-    <footer>&copy;<footer>&copy;2023 Diamond Rose Designs.Powered by Diamond Rose Designs.</footer></footer>
-    <script src="java.s/about.js"></script>
+
+        </div>
+    </main>
+    
+
+    <footer>&copy;2023 Diamond Rose Designs.Powered by Diamond Rose Designs.</footer></footer>
+    <script src="/java.s/products.js"></script>
 </body>
 </html>

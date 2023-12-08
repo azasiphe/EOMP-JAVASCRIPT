@@ -458,3 +458,34 @@ button:hover{
     cursor: pointer;
     color: #333;
 }
+
+/* Tablet styles */
+@media only screen and (min-width: 600px) {
+    body {
+        font-size: 18px;
+    }
+    
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+    body {
+        font-size: 25px;
+    }
+    table {
+        font-size: 14px; 
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+}
+
+/* Larger desktop styles */
+@media only screen and (min-width: 1440px) {
+    body {
+        font-size: 25px;
+    }
+
+}

@@ -1,107 +1,142 @@
-
-function Constructor(id, url, name, price){
-this.id=id,
-this.url=url,
-this.name=name,
-this.price=price
-
-}  
-let items =[]; 
-let item =new Constructor(1, "https://i.postimg.cc/BQW5qZgH/images-31.jpg", 'Mug', 150);
-let item2 =new Constructor(2, "https://i.postimg.cc/3RbSHzhy/download-32.jpg", 'T-shirt', 450);
-let item3 =new Constructor(3, "https://i.postimg.cc/MGJCkfP4/IMG-20220222-WA0025-250x250.jpg", 'Flask', 200);
-let item4 =new Constructor(4, "https://i.postimg.cc/T2Fr4f1L/IMG-20211119-WA0013-1024x1024-1-300x300.jpg", 'Sippy Cups', 250);
-
-let item5 =new Constructor(5, "https://i.postimg.cc/mrsQTRHd/Sling-Bag.jpg", 'Bag', 450);
-let item6 =new Constructor(6, "https://i.postimg.cc/y62ZPKYf/Scatters-Pillows-300x300.png", 'Pillow Cases', 350);
-let item7 =new Constructor(7, "https://i.postimg.cc/P5dD94G9/Ma-beddegoed-2.png", 'Bedding', 500- 1500);
-let item8 =new Constructor(8, "https://i.postimg.cc/kMtB572F/IMG-20220203-WA0001-440x440.jpg", 'Dribble nappy', 160);
-
-let item9 =new Constructor(9, "https://i.postimg.cc/kMtB572F/IMG-20220203-WA0001-440x440.jpg" , 'Socks', 150);
-let item10 =new Constructor(10, "https://i.postimg.cc/nrfSBHp9/Puzzle.jpg", 'Puzzle', 400);
-let item11 =new Constructor(11, "https://i.postimg.cc/RFWxXCkP/IMG-20211116-WA0037-440x440.jpg", 'Key Holder',90);
-let item12 =new Constructor(12, "https://i.postimg.cc/XJbYPCg2/images-27.jpg", 'Car Magnets', 450-1000);
-items.push(item,item2,item3,item4,item5,item6,item7,item8,item9,item10,item11,item12);
-
-
-localStorage.setItem('items', JSON.stringify(items));
-
-function remove(position){
-    items.splice(position,1);
-    favourite();
-    aza();
+function Constructor(id, url, title, price) {
+  (this.id = id), (this.url = url), (this.title = title), (this.price = price);
 }
-items=JSON.parse(localStorage.getItem('items'));
+let product = [
+  {
+    id: 1,
+    image: "https://i.postimg.cc/BQW5qZgH/images-31.jpg",
+    title: "Mug",
+    price: 120,
+  },
+  {
+    id: 2,
+    image: "https://i.postimg.cc/3RbSHzhy/download-32.jpg",
+    title: "T-shirt",
+    price: 450,
+  },
+  {
+    id: 3,
+    image: "https://i.postimg.cc/MGJCkfP4/IMG-20220222-WA0025-250x250.jpg",
+    title: "Flask",
+    price: 220,
+  },
+  {
+    id: 4,
+    image:
+      "https://i.postimg.cc/T2Fr4f1L/IMG-20211119-WA0013-1024x1024-1-300x300.jpg",
+    title: "Sippy Cups",
+    price: 250,
+  },
+  {
+    id: 5,
+    image: "https://i.postimg.cc/mrsQTRHd/Sling-Bag.jpg",
+    title: "Bag",
+    price: 450,
+  },
+  {
+    id: 6,
+    image: "https://i.postimg.cc/y62ZPKYf/Scatters-Pillows-300x300.png",
+    title: "Pillow Cases",
+    price: 350,
+  },
+  {
+    id: 7,
+    image: "https://i.postimg.cc/P5dD94G9/Ma-beddegoed-2.png",
+    title: "Bedding",
+    price: 1500,
+  },
+  {
+    id: 8,
+    image: "https://i.postimg.cc/kMtB572F/IMG-20220203-WA0001-440x440.jpg",
+    title: "Dribble nappy",
+    price: 160,
+  },
+  {
+    id: 9,
+    image: "https://i.postimg.cc/kMtB572F/IMG-20220203-WA0001-440x440.jpg",
+    title: "Socks",
+    price: 150,
+  },
+  {
+    id: 10,
+    image: "https://i.postimg.cc/nrfSBHp9/Puzzle.jpg",
+    title: "Puzzle",
+    price: 400,
+  },
+  {
+    id: 11,
+    image: "https://i.postimg.cc/RFWxXCkP/IMG-20211116-WA0037-440x440.jpg",
+    title: "Key Holder",
+    price: 90,
+  },
+  {
+    id: 12,
+    image: "https://i.postimg.cc/XJbYPCg2/images-27.jpg",
+    title: "Car Magnets",
+    price: 1000,
+  },
+];
 
-let table=document.querySelector('#productDisplay');
-function aza(){
-      let products = items.map(function(item,index){
 
-console.log(item);
-console.log(index);
-let itemClass = 'article item-' + item.id;
+displayProducts(product);
 
-return`
-
-<article class="${itemClass}">
-
-<td>
-
-<img src="${item.url}" >
-
-<p>${item.name}</p>
-<p>R${item.price}</p>
-<button value="${item.price}" onclick="AddToCart(${item.id})">AddToCart</button>
-<button class="Delete" value="${index}" onclick="removeItem(${item.id}">Remove</button>
-
-<td>
-</article>
-
-
-
-`;
-});
-let productTable = document.getElementById('productTable');
-
-
-table.innerHTML=products.join('');
-
+// Search products function
+function searchItems() {
+  let searchTerm = document.getElementById("searchInput").value.toLowerCase();
+  let filteredProducts = product.filter(
+    (item) =>
+      item.title.toLowerCase().includes(searchTerm) ||
+      item.price.toString().includes(searchTerm)
+  );
+  displayProducts(filteredProducts);
 }
-aza();
-function favourite(){
-    localStorage.setItem('items',JSON.stringify(items));
-    items = JSON.parse(localStorage.getItem('items'));
+
+// Sort products function
+function sortAlphabetically() {
+  product.sort((a, b) => a.title.localeCompare(b.title));
+  displayProducts(product);
 }
-function AddToCart(itemId){
-    console.log(`Item ${itemId} added to cart`);
-}
-function removeItem(itemId){
-    console.log(`Item ${itemId} removed from cart`);
-    aza();
-}
-table.addEventListener('click',function(event)
-{
-    if(event.target.classList.contains('Delete')){
-        remove(event.target.value);
+let cart = [];
+
+function addtocart(a) {
+  // console.log(a);
+  if(a){
+  
+      cart.push(a);
+      // console.log(cart);
+  
+      localStorage.setItem('checkout', JSON.stringify(cart) )
     }
-});
-//am making a function for my sort and price button //
-function sortItem (){
-let sortSelect = document.getElementById('sortSelect');
-let sortBy = sortSelect.value ;
+  
+  
+    // displayProducts(cart); to the admin page
+  }
 
-if (sortBy=== 'name'){
-    item.sort((a,b) =>a.name.localCompare(b.name));}
-    else if (sortBy=== 'price'){
-    items.sort((a,b) => a.price - b.price);
-}
-aza();
-}
-function searchItems(){
-    let searchInput = document.getElementById('searchInput');
-    let searchTerm = searchInput.value.toLowerCase();
-    let fiteredItems = items.filter(item=> item.name.toLowerCase().include(searchTerm));
-    items= fiteredItems;
-    aza();
-}
-aza();
+document.getElementById("searchInput").addEventListener("input", searchItems);
+document.getElementById("sort").addEventListener("click", sortAlphabetically);
+
+// this function is to display products
+function displayProducts(products) {
+  document.getElementById("root").innerHTML = products
+  .map(
+      (item, index) => `
+      <div class='box'>
+        <div class='img-box'>
+          <img class='images' src=${item.image}></img>
+          </div>
+          <p>${item.title}</p>
+          <h2>R ${item.price}.00</h2>
+          <button onclick='addtocart(${JSON.stringify(item)})'>Add to cart</button>
+          </div>`
+          )
+    .join("");
+
+    localStorage.setItem('Products', JSON.stringify(product))
+  }
+  //for my live demo 
+  let myModal = document.getElementById('myModal')
+let myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+})

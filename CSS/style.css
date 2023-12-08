@@ -10,6 +10,27 @@ body{
     justify-content: space-between;
     background-repeat: no-repeat;
 }
+.product-table{
+    background-color: red;
+  border: 2px solid black;
+ margin: 0 0 0 27%;
+}
+.product-table {
+    width: 150%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+.product-table th {
+    background-color: white;
+  
+  }
+  
+.product-table th, .product-table td {
+    border: 1px solid black;  
+    padding: 8px;
+    text-align: left;
+  }
 
 .card, .card-img-top{
     display: grid;

@@ -1,28 +1,4 @@
-// //setting that  when product add cart it should dislay on admin
-// let cart = JSON.parse(localStorage.getItem('Admin')) ||[];
-// let adminOutput = document.querySelector('.display-item')
-// function displayInTheAdmin(){
-    
-//     console.log(cart);
 
-//     cart.forEach( item => {
-//         console.log(item.title);
-//         adminOutput.innerHTML += 
-//         `
-//         <div class='box' style="dispaly-grid">
-//           <div class='img-box'>
-//             <img class='images' src= ${item.image}></img>
-//             </div>
-//             <p>  ${item.title}</p>
-//             <h2>  R ${item.price}.00</h2>
-//             <button onclick='edit(${JSON.stringify(item)})'>Edit</button>
-//             <button onclick='remove(${JSON.stringify(item)})'>Remove</button>
-//             </div>`
-//     })
-// }
-
-//displayInTheAdmin()
-//funtion for remove button
 
 
 
@@ -81,7 +57,7 @@ let product = [
   },
   {
     id: 9,
-    image: "https://i.postimg.cc/kMtB572F/IMG-20220203-WA0001-440x440.jpg",
+    image: "https://i.postimg.cc/J7QspkCg/057f05ea432a951c66db507afb33a23e-300x300.jpg",
     title: "Socks",
     price: 150,
   },
@@ -153,3 +129,48 @@ function displayProducts(products) {
   
     displayProducts(product);
   }
+  //.
+  // Function to display products in a table
+function displayProducts(products) {
+  const tableHeader = `
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Edit</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+  `;
+
+  const tableBody = products
+    .map(
+      (item) => `
+        <tr>
+          <td class="w-40">${item.id}</td>
+          <td ><img class='product-image' src=${item.image} alt="${item.title}"></td>
+          <td>${item.title}</td>
+          <td>R ${item.price}.00</td>
+          <td><button onclick='edit(${JSON.stringify(item)})'>EDIT</button></td>
+          <td><button onclick='remove(${JSON.stringify(item)})'>REMOVE</button></td>
+        </tr>`
+    )
+    .join("");
+
+  document.getElementById("root").innerHTML = `
+    <table class="product-table">
+      ${tableHeader}
+      <tbody>
+        ${tableBody}
+      </tbody>
+    </table>
+  `;
+
+  // Store the products in local storage
+  localStorage.setItem('Products', JSON.stringify(product));
+}
+
+displayProducts(product);
+

@@ -42,101 +42,25 @@
           <th scope="col-3">SUBTOTAL</th>
         </tr>
       </thead>
-       <tbody class="display-item">
-        <tr>
-          <td class='box'>produc.name</td>
-          <td>.price</td>
-          <td>.qua</td>
-          <td>R quani*price</td>
-        </tr>
+       <tbody class="display-item" id="checkoutTableBody">
+        
        </tbody>   
      
     </table>
           
-          <div id="cartProduct">Your Cart is empty</div>
+
           <div id="count"></div>
           <div class="foot">
                <h3>Total</h3>
               <h2 id="total">R 0.00</h2> 
               
-              <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+              <button onclick="payOrder()">Procced payment</button>
           </div>
       </div>
 
       
   </div>
    
-    <form class="row g-3 mt-5 me-5 ms-5">
-        <H1>BILLING DETAILS</H1>
-        <div class="col-md-4">
-          <label for="validationDefault01" class="form-label">First name</label>
-          <input type="text" class="form-control" id="validationDefault01" value="Mark" required>
-        </div>
-        <div class="col-md-4">
-          <label for="validationDefault02" class="form-label">Last name</label>
-          <input type="text" class="form-control" id="validationDefault02" value="Otto" required>
-        </div>
-        <div class="col-md-4">
-          <label for="validationDefaultUsername" class="form-label">Username</label>
-          <div class="input-group">
-            <span class="input-group-text" id="inputGroupPrepend2">@</span>
-            <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <label for="validationDefault03" class="form-label">City</label>
-          <input type="text" class="form-control" id="validationDefault03" required>
-        </div>
-        <div class="col-md-3">
-          <label for="validationDefault04" class="form-label">State</label>
-          <select class="form-select" id="validationDefault04" required>
-            <option selected disabled value="">Choose...</option>
-           
-            <option>Alaska</option>
-            <option>Alabama</option>
-            <option>Nigeria</option>
-            <option>South Africa</option>
-          </select>
-        </div>
-        <div class="col-md-3">
-          <label for="validationDefault05" class="form-label">Zip</label>
-          <input type="text" class="form-control" id="validationDefault05" required>
-        </div>
-        <div class="col-12">
-            <label for="validationDefault06" class="form-label">Order notes(optional)</label>
-            <input type="text" class="form-control" id="validationDefault06" required>
-        </div>
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-            <label class="form-check-label" for="invalidCheck2">
-              Agree to terms and conditions
-            </label>
-          </div>
-        </div>
-        <table class="table mt-4">
-            <h1>YOUR ORDER</h1>
-        <thead>
-        <tr>
-            <th scope="col">Product </th>
-
-            <th>Subtotal</th>
-        </tr>
-        </thead>
-        <tbody id="orderTableBody">
-    
-        </tbody>
-        <tfoot>
-            <tr>
-                <td>Total:</td>
-                <td id="totalAmount">R 0.00</td>
-            </tr>
-        </tfoot>
-        </table>
-        <div class="col-12">
-          <button class="btn btn-primary" type="submit" style="text-align: center;">Place Order</button>
-        </div>
-      </form>
 
     <footer c>&copy;2023 Diamond Rose Designs.Powered by Diamond Rose Designs.</footer>
     <script src="/java.s/checkout.js"></script>

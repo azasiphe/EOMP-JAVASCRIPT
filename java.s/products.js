@@ -7,6 +7,7 @@ let product = [
     image: "https://i.postimg.cc/BQW5qZgH/images-31.jpg",
     title: "Mug",
     price: 120,
+    quantity:1
   },
   {
     id: 2,

@@ -8,15 +8,16 @@ function displayInTheCheckout(){
     cart.forEach( item => {
         console.log(item.title);
         adminOutput.innerHTML += 
-        `
-        <div class='box' style="dispaly-grid">
+        `<tr>
+          <div class='box' style="dispaly-grid">
           <div class='img-box'>
             <img class='images' src= ${item.image}></img>
-            </div>
             <p>  ${item.title}</p>
-            <h2>  R ${item.price}.00</h2>
+          </div>
+          <h2>  R ${item.price}.00</h2>
            
-            </div>`
+            </div>
+        </tr>`
     })
 }
 
